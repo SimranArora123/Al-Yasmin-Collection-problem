@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class studentdatabase {
+public class StudentDatabase {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String user = sc.next();
@@ -26,25 +26,25 @@ public class studentdatabase {
             System.out.println("Please enter the action you want to perform:");
             String action = sc.next();
             if (action.equalsIgnoreCase("update")) {
-                int old_id = sc.nextInt();
-                int new_id = sc.nextInt();
-                String new_name = sc.next();
-                Students.set(old_id, new students(new_name, new_id));
+                int oldid = sc.nextInt();
+                int newid = sc.nextInt();
+                String newname = sc.next();
+                Students.set(oldid, new students(newname, newid));
                 for (students it : Students) {
                     it.printinfo();
 
                 }
             } else if (action.equalsIgnoreCase("delete")) {
-                int old_id = sc.nextInt();
-                Students.remove(old_id);
+                int oldid = sc.nextInt();
+                Students.remove(oldid);
                 for (students it : Students) {
                     it.printinfo();
 
                 }
             } else if (action.equalsIgnoreCase("add")) {
-                int new_id = sc.nextInt();
-                String new_name = sc.next();
-                Students.add(new students(new_name, new_id));
+                int newid = sc.nextInt();
+                String newname = sc.next();
+                Students.add(new students(newname, newid));
                 for (students it : Students) {
                     it.printinfo();
 
@@ -57,8 +57,8 @@ public class studentdatabase {
 }
 
 class students {
-    public String name;
-    public int id;
+    private String name;
+    private int id;
 
     public students(String name, int id) {
         this.name = name;
@@ -70,4 +70,3 @@ class students {
     }
 
 }
-
